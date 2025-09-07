@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-// Account Class
+// Creating Account Class
 class Account {
     private int accountNumber;
     private String accountHolderName;
@@ -8,7 +8,7 @@ class Account {
     private String email;
     private String phoneNumber;
 
-    // Constructor
+    // Make Constructor
     public Account(int accountNumber, String accountHolderName, double balance, String email, String phoneNumber) {
         this.accountNumber = accountNumber;
         this.accountHolderName = accountHolderName;
@@ -17,7 +17,7 @@ class Account {
         this.phoneNumber = phoneNumber;
     }
 
-    // Deposit Method
+    // Adding Deposit Method
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
@@ -27,7 +27,7 @@ class Account {
         }
     }
 
-    // Withdraw Method
+    // Adding Withdraw Method
     public void withdraw(double amount) {
         if (amount > 0) {
             if (balance >= amount) {
@@ -41,7 +41,7 @@ class Account {
         }
     }
 
-    // Display Account Details
+    // For  Displaying  Account Details
     public void displayAccountDetails() {
         System.out.println("Account Number: " + accountNumber);
         System.out.println("Account Holder: " + accountHolderName);
@@ -50,20 +50,20 @@ class Account {
         System.out.println("Phone: " + phoneNumber);
     }
 
-    // Update Contact Details
+    // To Update Contact Details
     public void updateContactDetails(String email, String phoneNumber) {
         this.email = email;
         this.phoneNumber = phoneNumber;
         System.out.println("Contact details updated successfully.");
     }
 
-    // Getter for accountNumber
+    // To use Getter for accountNumber
     public int getAccountNumber() {
         return accountNumber;
     }
 }
 
-// User Interface Class
+// Creating User Interface Class
 class UserInterface {
     private Account[] accounts;
     private int accountCount;
@@ -75,14 +75,14 @@ class UserInterface {
         sc = new Scanner(System.in);
     }
 
-    // Create New Account
+    // For  New Account Creation
     public void createAccount() {
         System.out.print("Enter account holder name: ");
         String name = sc.nextLine();
 
         System.out.print("Enter initial deposit amount: ");
         double balance = sc.nextDouble();
-        sc.nextLine(); // consume newline
+        sc.nextLine(); 
 
         System.out.print("Enter email address: ");
         String email = sc.nextLine();
@@ -96,7 +96,7 @@ class UserInterface {
         accountCount++;
     }
 
-    // Find Account by Number
+    // To Find Account by Number
     private Account findAccount(int accNo) {
         for (int i = 0; i < accountCount; i++) {
             if (accounts[i].getAccountNumber() == accNo) {
@@ -106,7 +106,7 @@ class UserInterface {
         return null;
     }
 
-    // Deposit Operation
+    // For Deposit Operation
     public void performDeposit() {
         System.out.print("Enter account number: ");
         int accNo = sc.nextInt();
@@ -122,7 +122,7 @@ class UserInterface {
         }
     }
 
-    // Withdraw Operation
+    // For Withdrawal Operation
     public void performWithdrawal() {
         System.out.print("Enter account number: ");
         int accNo = sc.nextInt();
@@ -138,7 +138,7 @@ class UserInterface {
         }
     }
 
-    // Show Account Details
+    // To Show Account Details
     public void showAccountDetails() {
         System.out.print("Enter account number: ");
         int accNo = sc.nextInt();
@@ -152,7 +152,7 @@ class UserInterface {
         }
     }
 
-    // Update Contact
+    // To Update Contact
     public void updateContact() {
         System.out.print("Enter account number: ");
         int accNo = sc.nextInt();
@@ -172,7 +172,7 @@ class UserInterface {
         }
     }
 
-    // Main Menu
+    // For  Main Menu
     public void mainMenu() {
         int choice;
         do {
@@ -200,10 +200,11 @@ class UserInterface {
     }
 }
 
-// Main Class
+// For Main Class
 public class BankingApp {
     public static void main(String[] args) {
-        UserInterface ui = new UserInterface(50); // Support up to 50 accounts
+        UserInterface ui = new UserInterface(50); 
         ui.mainMenu();
     }
 }
+
