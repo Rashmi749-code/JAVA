@@ -90,7 +90,7 @@ class UserInterface {
         System.out.print("Enter phone number: ");
         String phone = sc.nextLine();
 
-        int accNo = 1000 + accountCount + 1;
+        int accNo = 1000 + accountCount;
         accounts[accountCount] = new Account(accNo, name, balance, email, phone);
         System.out.println("Account created successfully with Account Number: " + accNo);
         accountCount++;
@@ -207,4 +207,5 @@ public class BankingApp {
         ui.mainMenu();
     }
 }
+
 
